@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlatziVideo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
 </head>
 <style>
     body {
         margin: 0px;
-        background-color: #AB88FF;
+        background-color: #8F57FF;
+        font-family: 'Muli', sans-serif;
     }
 
     .header {
-        background-color: #AB88FF;
+        background-color: #8F57FF;
         width: 100%;
         height: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     /* Arquitectura CSS tipo BEM "block__element--modify" */
@@ -29,7 +34,7 @@
     }
 
     .header__menu ul{
-        /* display: none; */
+        display: none;
         list-style: none;
         padding: 0px;
         position: absolute;
@@ -38,11 +43,66 @@
         margin: 0px 0px 0px -14px;
     }
 
-    .header__menu--profile {
-        margin-right: 8px;
-        width: 40px;
+    .header__menu:hover ul, ul:hover {
+        display: block;
     }
 
+    .header__menu li {
+        margin: 10px 0px;
+    }
+
+    .header__menu li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .header__menu li a:hover {
+        text-decoration: underline;
+    }
+
+    .header__menu--profile {
+        display: flex;
+        margin-right: 8px;
+        align-items: center;
+    }
+
+    .header__menu--profile img{
+        margin-right: 8px;
+        width: 40px;
+        height: 40px;
+        filter: invert(1);
+    }
+
+    .header__menu--profile p{
+        margin: 0px;
+        color: white;
+    }
+
+    .main {
+        height: 300px;
+    }
+
+    .main__title {
+        color: white;
+        font-size: 25px;
+    }
+
+    .input {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 2px solid white;
+        border-radius: 30px;
+        color: white;
+        font-family: 'Muli', sans-serif;
+        font-size: 16px;
+        height: 50px;
+        padding: 0px 20px;
+        width: 70%;
+        outline: none;
+    }
+
+    ::placeholder {
+        color: white;
+    }
 
 </style>
 <body>
@@ -59,5 +119,12 @@
             </ul>
         </div>
     </header>
+
+    <section class="main">
+        <h2 class="main__title">¿Qué quieres ver hoy?</h2>
+        <!-- la propiedad 'placeholder' es lo que va como texto dentro del input -->
+        <input class="input" type="text" placeholder="Buscar...">
+    </section>
+
 </body>
 </html>
