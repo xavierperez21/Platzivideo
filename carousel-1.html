@@ -20,9 +20,10 @@
         white-space: nowrap;
         margin: 70px 0px;
         padding-bottom: 10px;
+        
     }
 
-    .carousel__item {
+    .carousel-item {
         background-color: palegreen;
         width: 200px;
         height: 250px;
@@ -36,43 +37,118 @@
         /* transform-origin indica donde será el origen de la transformacion que en este caso es
         del centro izquierda  */
         transform-origin: center left;
+        position: relative;
     }
 
     /* Al hacer hover sobre un item, todos los demás se desplazan 100px hacia la derecha
     con translate3d. La birguliña indica que va a afectar a todos los elementos preceden
-    de este elemento al que se le hizo hover. */
-    .carousel__item:hover ~ .carousel__item {
+    de este elemento al que se le hizo hover.
+    Es decir a todos los HERMANOS directos del elemento. */
+    .carousel-item:hover ~ .carousel-item {
         transform: translate3d(100px, 0, 0);
     }
 
     /* Se opacan todos los elementos cuando hacemos hover en el contenedor */
-    .carousel__container:hover .carousel__item {
+    .carousel__container:hover .carousel-item {
         opacity: 0.3;
     }
 
     /* Como todos estan opacos al posicionarnos sobre el contenedor y luego nos posicionamos sobre
     el item, ese item en especifico es el que va a recibir la transformacion de scale y a 
     aumentar su opacidad */
-    .carousel__container:hover .carousel__item:hover {
+    .carousel__container:hover .carousel-item:hover {
         transform: scale(1.5);
         opacity: 1;
+    }
+
+    .carousel-item__img {
+        width: 200px;
+        height: 250px;
+
+        /* Para que la imagen original no se deforme al modificar las medidas */
+        object-fit: cover;
+    }
+
+    .carousel-item__details {
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+        font-size: 12px;
+        opacity: 0;
+        padding: 10px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: white;
+
+        /* Recuerda que la transicion siempre la debemos de poner en el elemento
+        que va a sufrir la transicion */
+        transition: 450ms opacity;
+    }
+
+    .carousel-item:hover .carousel-item__details{
+        opacity: 1;
+    }
+
+    .carousel-item__details--icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .carousel-item__details--title {
+        margin: 5px 0px 0px 0px;
+    }
+
+    .carousel-item__details--subtitle {
+        margin: 5px 0px 0px 0px;
     }
 
 </style>
 <body>
     <section class="carousel">
         <div class="carousel__container">
-            <div class="carousel__item">
-
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?cs=srgb&dl=man-wearing-black-zip-up-jacket-near-beach-smiling-at-the-736716.jpg&fm=jpg" alt="people">
+                <div class="carousel-item__details">
+                    <div>
+                        <img class="carousel-item__details--icon" src="./icons/play_icon.png" alt="play_icon"/>
+                        <img class="carousel-item__details--icon" src="./icons/plus_icon.png" alt="plus_icon">
+                    </div>
+                    <p class="carousel-item__details--title">Título descriptivo</p>
+                    <p class="carousel-item__details--subtitle">2019 16+ 114 minutos</p>
+                </div>
             </div>
-            <div class="carousel__item">
-
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?cs=srgb&dl=man-wearing-black-zip-up-jacket-near-beach-smiling-at-the-736716.jpg&fm=jpg" alt="people">
+                <div class="carousel-item__details">
+                    <div>
+                        <img class="carousel-item__details--icon" src="./icons/play_icon.png" alt="play_icon"/>
+                        <img class="carousel-item__details--icon" src="./icons/plus_icon.png" alt="plus_icon">
+                    </div>
+                    <p class="carousel-item__details--title">Título descriptivo</p>
+                    <p class="carousel-item__details--subtitle">2019 16+ 114 minutos</p>
+                </div>
             </div>
-            <div class="carousel__item">
-
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?cs=srgb&dl=man-wearing-black-zip-up-jacket-near-beach-smiling-at-the-736716.jpg&fm=jpg" alt="people">
+                <div class="carousel-item__details">
+                    <div>
+                        <img class="carousel-item__details--icon" src="./icons/play_icon.png" alt="play_icon"/>
+                        <img class="carousel-item__details--icon" src="./icons/plus_icon.png" alt="plus_icon">
+                    </div>
+                    <p class="carousel-item__details--title">Título descriptivo</p>
+                    <p class="carousel-item__details--subtitle">2019 16+ 114 minutos</p>
+                </div>
             </div>
-            <div class="carousel__item">
-
+            <div class="carousel-item">
+                <img class="carousel-item__img" src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?cs=srgb&dl=man-wearing-black-zip-up-jacket-near-beach-smiling-at-the-736716.jpg&fm=jpg" alt="people">
+                <div class="carousel-item__details">
+                    <div>
+                        <img class="carousel-item__details--icon" src="./icons/play_icon.png" alt="play_icon"/>
+                        <img class="carousel-item__details--icon" src="./icons/plus_icon.png" alt="plus_icon">
+                    </div>
+                    <p class="carousel-item__details--title">Título descriptivo</p>
+                    <p class="carousel-item__details--subtitle">2019 16+ 114 minutos</p>
+                </div>
             </div>
         </div>
     </section>
