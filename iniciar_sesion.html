@@ -4,27 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
 </head>
-<style>
-    body {
-    margin: 0;
-    font-family: 'Muli', sans-serif;
-  }
-  .header {
-    align-items: center;
-    background-color: #21c08b;
-    color: white;
-    display: flex;
-    height: 100px;
-    justify-content: space-between;
-    top: 0px;
-    width: 100%;
-  }
-  .header__img {
-    margin-left: 30px;
-    width: 200px;
-  }
-</style>
 <body>
     <header class="header">
         <img class="header__img" src="./icons/logo_platzi-video.png" alt="Logo_platzivideo">
@@ -36,18 +18,18 @@
                 <input class="input" type="text" placeholder="Correo">
                 <input class="input" type="password" placeholder="Contraseña">
                 <button class="button">Iniciar sesión</button>
-                <div class="login_container--remember-me">
+                <div class="login__container--remember-me">
                     <label>
                         <input type="checkbox" name="" id="cbox1" value="checkbox">Recuérdame
                     </label>
                     <a href="/">Olvidé mi contraseña</a>
                 </div>
             </form>
-            <section class="login_container--social-media">
+            <section class="login__container--social-media">
                 <div><img src="./assets/google-icon.png" alt="Google">Inicia sesión con Google</div>
                 <div><img src="./assets/twitter-icon.png" alt="Google">Inicia sesión con Twitter</div>
             </section>
-            <p class="login__container--registe">¿No tienes ninguna cuenta? <a href="/">Regístrate</a></p>
+            <p class="login__container--register">¿No tienes ninguna cuenta? <a href="/">Regístrate</a></p>
         </section>
     </section>
     <footer class="footer">
