@@ -17,7 +17,7 @@ body {
     width: 200px;
   }
 
-  .register {
+  .login {
       font-family: 'Muli', sans-serif;
       background: linear-gradient(#21C08B, #8F57FF);
       display: flex;
@@ -28,27 +28,72 @@ body {
       min-height: calc(100vh - 200px);
   }
 
-  .register__container {
+  .login__container {
       font-family: 'Muli', sans-serif;
       background-color: rgba(255, 255, 255, 0.1);
       border: 2px solid white;
       border-radius: 40px;
       color: white;
       padding: 60px 68px 40px;
-      min-height: 600px;
+      min-height: 700px;
       width: 300px;
       display: flex;
       justify-content: space-around;
       flex-direction: column;
   }
 
-  .register__container--form {
+  .login__container--form {
       display: flex;
       flex-direction: column;
   }
 
-  .register__container--form label{
+  .login__container--form label{
       font-size: 14px;
+  }
+
+  .login__container--remember-me {
+      display: flex;
+      color: white;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+  }
+
+  .login__container--remember-me a {
+      color: white;
+      font-size: 14px;
+      text-decoration: none;
+  }
+
+  .login__container--remember-me a:hover {
+      text-decoration: underline;
+  }
+
+  .login__container--social-media > div {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .login__container--social-media > div > img {
+    width: 30px;
+    margin-right: 10px;
+  }
+
+  .login__container--register {
+      font-size: 14px;
+  }
+
+  .login__container--register > a {
+      font-size: 16px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+  }
+
+  .login__container--register a:hover {
+    text-decoration: underline;
   }
 
   .input {
@@ -71,7 +116,7 @@ body {
   }
 
   .button {
-      background-color: rgba(255, 255, 255, 0.3);
+      background-color: rgba(255, 255, 255, 0.1);
       border: none;
       border-radius: 25px;
       color: white;
@@ -104,30 +149,16 @@ body {
       text-decoration: underline;
   }
 
-  .register__container p {
-      align-self: center;
-    }
-    
-    .register__container a {
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-  }
-
-  .register__container a:hover {
-      text-decoration: underline;
-  }
-
   @media only screen and (max-width: 600px) {
-    .register__container {
-        background-color: transparent;
-        border: none;
-        padding: 0px;
-        width: 100%;
-    }
-    
-    .footer {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-}
+      .login__container {
+          background-color: transparent;
+          border: none;
+          padding: 0px;
+          width: 100%;
+      }
+      
+      .footer {
+          align-items: flex-start;
+          flex-direction: column;
+      }
+  }
