@@ -1,0 +1,166 @@
+$violet: #8F57FF;
+$green: #21c08b;
+
+body {
+    margin: 0;
+    font-family: 'Muli', sans-serif;
+  }
+
+//   .flex{}
+  @mixin flex($direction, $justify, $align) {
+      display: flex;
+      flex-direction: $direction;
+      align-items: $align;
+      justify-content: $justify;
+  } 
+
+  .header {
+    // @extend .flex;
+    @include flex(initial, space-between, center);
+    // align-items: center;
+    // display: flex;
+    background-color: $green;
+    color: white;
+    height: 100px;
+    top: 0px;
+    width: 100%;
+  }
+
+  .header__img {
+    margin-left: 30px;
+    width: 200px;
+  }
+
+  .login {
+      @include flex(column, center, center);
+      font-family: 'Muli', sans-serif;
+      background: linear-gradient($green, $violet);
+      padding: 0px 30px;
+      min-height: calc(100vh - 200px);
+  }
+
+  .login__container {
+      @include flex(column, space-around, initial);
+      font-family: 'Muli', sans-serif;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 2px solid white;
+      border-radius: 40px;
+      color: white;
+      padding: 60px 68px 40px;
+      min-height: 700px;
+      width: 300px;
+  }
+
+  .login__container--form {
+      @include flex(column, initial, initial)
+  }
+
+  .login__container--form label{
+      font-size: 14px;
+  }
+
+  .login__container--remember-me {
+      @include flex(initial, space-between, center);
+      color: white;
+      margin-top: 10px;
+
+      a {
+        color: white;
+       font-size: 14px;
+       text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+  }
+
+
+  .login__container--social-media > div {
+    @include flex(initial, initial, center);
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .login__container--social-media > div > img {
+    width: 30px;
+    margin-right: 10px;
+  }
+
+  .login__container--register {
+      font-size: 14px;
+
+      a {
+        font-size: 16px;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+  }
+
+  .input {
+      background-color: transparent;
+      border-left: 0px;
+      border-top: 0px;
+      border-right: 0px;
+      border-bottom: 2px solid white;
+      font-size: 16px;
+      font-family: 'Muli', sans-serif;
+      margin-bottom: 20px;
+      padding: 0px 20px;
+      outline: none;
+      height: 50px;
+      color: white;
+  }
+
+  ::placeholder {
+      color: white;
+  }
+
+  .button {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: 'Muli', sans-serif;
+      height: 50px;
+      letter-spacing: 1px;
+      margin: 10px 0px;
+  }
+
+  .footer {
+      @include flex(initial, initial, center);
+      background-color: $violet;
+      height: 100px;
+      width: 100%;
+      a {
+          color: white;
+          cursor: pointer;
+          font-size: 14px;
+          padding-left: 30px;
+          text-decoration: none;
+      }        
+      a:hover {
+        text-decoration: underline;
+      }
+  }
+
+  @media only screen and (max-width: 600px) {
+      .login__container {
+          background-color: transparent;
+          border: none;
+          padding: 0px;
+          width: 100%;
+      }
+      
+      .footer {
+          @include flex(column, initial, flex-start)
+      }
+  }
